@@ -1,0 +1,10 @@
+java_library(
+    name = 'clock',
+    srcs = glob(['src/main/java/**/*.java']),
+    resources = glob(['src/main/resources/**']),
+    deps = ['//annotations/time:annotations-time'],
+    provided_deps = ['//:checker-framework'],
+    annotation_processor_deps = ['//:checker-framework'],
+    annotation_processors = ['org.checkerframework.checker.units.UnitsChecker'],
+    visibility = ['PUBLIC'],
+)

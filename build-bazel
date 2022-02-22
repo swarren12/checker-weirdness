@@ -1,0 +1,11 @@
+#!/bin/sh
+
+BASE_DIR=$(readlink -f $(dirname $0))
+mkdir -p /tmp/build-bazel
+(
+    cd /tmp/build-bazel
+    wget https://github.com/bazelbuild/bazel/releases/download/5.0.0/bazel-5.0.0-dist.zip
+    unzip bazel-5.0.0-dist.zip
+    env EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk" bash ./compile.sh
+    cp output/bazel $BASE_DIR/bazel
+)

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-BASE_DIR=$(readlink -f $(dirname $0))
-$BASE_DIR/buck-v2021.02.12.01.pex $@

@@ -1,0 +1,7 @@
+java_library(
+    name = "annotations-time",
+    srcs = glob(["src/main/java/**/*.java"]),
+    resources = glob(["src/main/resources/**"]),
+    deps = ["//:checker-qual"],
+    visibility = ["//visibility:public"],
+)
